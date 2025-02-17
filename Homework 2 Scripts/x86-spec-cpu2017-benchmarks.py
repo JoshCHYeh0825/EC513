@@ -308,26 +308,20 @@ def handle_exit():
     # is too small. Experiment with number to find a reasonable instruction count
     
     print("Setting-up warmup")
-    processor.get_cores()[0].core.scheduleInstStop(0, 10000000, "Tick exit reached")
+    processor.get_cores()[1].core.scheduleInstStop(0, 10_000_000, "Tick exit reached")
     yield False
-    
-    print("Setting-up measurements")
-    m5.stats.reset() # Reset before measurement starts
-    processor.get_cores()[0].core.scheduleInstStop(0, 1010000000, "Tick exit reached")
-    
-    # Below is another method to limit the execution time of the simulation.
-    # m5.scheduleTickExitFromCurrent(100000)
-    yield False
-    print("Dump stats at the end of the ROI!")
-
-    m5.stats.dump()
-    yield True  # Stop the simulation. We're done.
-
-
-def handle_schedule():
-    print("Dumping stats")
+    print("Dump stats at the end of the Warmup!")
     m5.stats.dump()
     yield True
+
+def handle_schedule():
+	print("Setting-up measurements")
+    m5.stats.reset() # Reset before measurement starts
+    processor.get_cores()[1].core.scheduleInstStop(0, 1_010_000_000, "Tick exit reached")
+    yield False
+    print("Dumping true stats")
+    m5.stats.dump()
+    yield True  # Stop the simulation. We're done.
 
 
 simulator = Simulator(
