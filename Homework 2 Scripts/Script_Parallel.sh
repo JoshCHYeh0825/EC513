@@ -7,6 +7,7 @@
 #$ -e /projectnb/ec513/students/jy0825/HW2/spec-2017/gem5/output.log                  
 #$ -m ea                 
 
+source /projectnb/ec513/materials/HW2/spec-2017/sourceme 
 
 # === Set Benchmark Names ===
 BENCHMARKS=("500.perlbench_r" "502.gcc_r" "503.bwaves_r" "527.cam4_r" "505.mcf_r")
