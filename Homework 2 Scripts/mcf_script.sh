@@ -1,7 +1,7 @@
 #!/bin/bash -l
 
 #$ -l h_rt=72:00:00      
-#$ -N gcc_r    
+#$ -N mcf_r    
 #$ -pe omp 10             
 #$ -m ea                 
 
@@ -35,7 +35,7 @@ if [ ! -f "$LOCKFILE" ]; then
 fi
 
 # === Set Benchmark Name ===
-BENCHMARK="502.gcc_r"
+BENCHMARK="505.mcf_r"
 OUTPUT_DIR="/projectnb/ec513/students/jy0825/HW2/Tests/$BENCHMARK/"
 
 # Create output directory if missing
