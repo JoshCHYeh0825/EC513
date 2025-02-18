@@ -1,0 +1,4 @@
+SyntaxError: invalid syntax (x86-spec-cpu2017-benchmarks.py, line 309)
+
+At:
+  src/python/m5/main.py(650): main

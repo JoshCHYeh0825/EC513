@@ -1,0 +1,10 @@
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 24.1.0.1
+gem5 compiled Feb  8 2025 10:02:26
+gem5 started Feb 18 2025 12:12:08
+gem5 executing on scc-ne6, pid 127074
+command line: /projectnb/ec513/students/jy0825/HW2/spec-2017/gem5/build/X86/gem5.opt --outdir=/projectnb/ec513/students/jy0825/HW2/spec-2017/gem5/output_502.gcc_r /projectnb/ec513/students/jy0825/HW2/spec-2017/gem5/configs/example/gem5_library/x86-spec-cpu2017-benchmarks.py --image /projectnb/ec513/students/jy0825/HW2/spec-2017/disk-image/spec-2017/spec-2017-image/spec-2017 --partition 1 --benchmark 502.gcc_r --size test
+
+info: Standard input is not a terminal, disabling listeners.

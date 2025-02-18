@@ -1,0 +1,2 @@
+ERROR: stats.txt missing for 505.mcf_r!
+Check gem5_error.log for possible issues.
