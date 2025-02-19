@@ -5,25 +5,24 @@ gem5 is copyrighted software; use the --copyright option for details.
 
 gem5 version 24.1.0.1
 gem5 compiled Feb  8 2025 10:02:26
-gem5 started Feb 17 2025 16:56:50
-gem5 executing on scc-wn1, pid 110520
-command line: /projectnb/ec513/students/jy0825/HW2/spec-2017/gem5/build/X86/gem5.opt --outdir=/projectnb/ec513/students/jy0825/HW2/spec-2017/gem5/output_500.perlbench_r /projectnb/ec513/students/jy0825/HW2/spec-2017/gem5/configs/example/gem5_library/x86-spec-cpu2017-benchmarks.py --image /projectnb/ec513/students/jy0825/HW2/spec-2017/disk-image/spec-2017/spec-2017-image/spec-2017 --partition 1 --benchmark 500.perlbench_r --size test
+gem5 started Feb 18 2025 15:11:57
+gem5 executing on scc-pi8, pid 116375
+command line: /projectnb/ec513/students/jy0825/HW2/spec-2017/gem5/build/X86/gem5.opt --outdir=/projectnb/ec513/students/jy0825/HW2/Tests/output_500.perlbench_r /projectnb/ec513/students/jy0825/HW2/spec-2017/gem5/configs/example/gem5_library/x86-spec-cpu2017-benchmarks.py --image /projectnb/ec513/students/jy0825/HW2/spec-2017/disk-image/spec-2017/spec-2017-image/spec-2017 --partition 1 --benchmark 500.perlbench_r --size test
 
 info: Standard input is not a terminal, disabling listeners.
 info: Using default config
 CPUS:
-[<gem5.components.processors.simple_core.SimpleCore object at 0x15095cedede0>, <gem5.components.processors.simple_core.SimpleCore object at 0x15095d413680>]
+[<gem5.components.processors.simple_core.SimpleCore object at 0x1528007bc650>, <gem5.components.processors.simple_core.SimpleCore object at 0x1528007bca40>]
 Running the simulation
 Using KVM cpu
 Done bootling Linux
 Resetting stats at the start of ROI!
 switching cpus
-Setting-up warmup
 Setting-up measurements
 Dumping true stats
 Done with the simulation
 
 Performance statistics:
-roi simulated ticks: 508416011730
-Ran a total of 90.968246905123 simulated seconds
-Total wallclock time: 47710.61s, 795.18 min
+roi simulated ticks: 1127186350335
+Ran a total of 21.221899477714 simulated seconds
+Total wallclock time: 22927.89s, 382.13 min

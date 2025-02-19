@@ -1,10 +1,28 @@
+Global frequency set at 1000000000000 ticks per second
+      0: board.pc.south_bridge.cmos.rtc: Real-time clock set to Sun Jan  1 00:00:00 2012
 gem5 Simulator System.  https://www.gem5.org
 gem5 is copyrighted software; use the --copyright option for details.
 
 gem5 version 24.1.0.1
 gem5 compiled Feb  8 2025 10:02:26
-gem5 started Feb 18 2025 12:12:08
-gem5 executing on scc-ne6, pid 127074
-command line: /projectnb/ec513/students/jy0825/HW2/spec-2017/gem5/build/X86/gem5.opt --outdir=/projectnb/ec513/students/jy0825/HW2/spec-2017/gem5/output_502.gcc_r /projectnb/ec513/students/jy0825/HW2/spec-2017/gem5/configs/example/gem5_library/x86-spec-cpu2017-benchmarks.py --image /projectnb/ec513/students/jy0825/HW2/spec-2017/disk-image/spec-2017/spec-2017-image/spec-2017 --partition 1 --benchmark 502.gcc_r --size test
+gem5 started Feb 18 2025 15:13:17
+gem5 executing on scc-va1, pid 200353
+command line: /projectnb/ec513/students/jy0825/HW2/spec-2017/gem5/build/X86/gem5.opt --outdir=/projectnb/ec513/students/jy0825/HW2/Tests/output_502.gcc_r /projectnb/ec513/students/jy0825/HW2/spec-2017/gem5/configs/example/gem5_library/x86-spec-cpu2017-benchmarks.py --image /projectnb/ec513/students/jy0825/HW2/spec-2017/disk-image/spec-2017/spec-2017-image/spec-2017 --partition 1 --benchmark 502.gcc_r --size test
 
 info: Standard input is not a terminal, disabling listeners.
+info: Using default config
+CPUS:
+[<gem5.components.processors.simple_core.SimpleCore object at 0x1515db1a6cf0>, <gem5.components.processors.simple_core.SimpleCore object at 0x1515da59ca70>]
+Running the simulation
+Using KVM cpu
+Done bootling Linux
+Resetting stats at the start of ROI!
+switching cpus
+Setting-up measurements
+Dumping true stats
+Done with the simulation
+
+Performance statistics:
+roi simulated ticks: 32794544295
+Ran a total of 23.773262832442 simulated seconds
+Total wallclock time: 28131.61s, 468.86 min

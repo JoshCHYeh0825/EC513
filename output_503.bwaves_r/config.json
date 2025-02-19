@@ -32,7 +32,7 @@
         "mmap_using_noreserve": false,
         "multi_thread": false,
         "num_work_ids": 16,
-        "readfile": "/projectnb/ec513/students/jy0825/HW2/spec-2017/gem5/output_503.bwaves_r/readfile_-0x68418f6154a37807",
+        "readfile": "/projectnb/ec513/students/jy0825/HW2/Tests/output_503.bwaves_r/readfile_0x4d3cad339608eca2",
         "redirect_paths": [],
         "shadow_rom_ranges": [],
         "shared_backstore": "",
