@@ -79,9 +79,9 @@ bootconsole [earlyser0] disabled
 ACPI: Core revision 20180810
 APIC: Switch to symmetric I/O mode setup
 ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1
-tsc: Unable to calibrate against PIT
-tsc: No reference (HPET/PMTIMER) available
-tsc: Marking TSC unstable due to could not calculate TSC khz
+tsc: Using PIT calibration value
+tsc: Detected 2839.722 MHz processor
+tsc: Marking TSC unstable due to TSCs unsynchronized
 Calibrating delay loop (skipped) preset value.. 15999.84 BogoMIPS (lpj=7999923)
 pid_max: default: 32768 minimum: 301
 Mount-cache hash table entries: 8192 (order: 4, 65536 bytes)
@@ -97,6 +97,8 @@ MDS: Vulnerable: Clear CPU buffers attempted, no microcode
 Freeing SMP alternatives memory: 24K
 ACPI Warning: AcpiEnable failed (20180810/utxfinit-135)
 ACPI: Unable to enable ACPI
+random: fast init done
+APIC timer disabled due to verification failure
 smpboot: CPU0: HygonGenuine Fake gem5 x86_64 CPU (family: 0xf, model: 0x25, stepping: 0x1)
 Performance Events: no PMU driver, software events only.
 rcu: Hierarchical SRCU implementation.
@@ -112,7 +114,7 @@ clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1911
 futex hash table entries: 512 (order: 3, 32768 bytes)
 NET: Registered protocol family 16
 audit: initializing netlink subsys (disabled)
-audit: type=2000 audit(1325376000.281:1): state=initialized audit_enabled=0 res=1
+audit: type=2000 audit(1325376000.317:1): state=initialized audit_enabled=0 res=1
 cpuidle: using governor ladder
 PCI: Using configuration type 1 for base access
 HugeTLB registered 2.00 MiB page size, pre-allocated 0 pages
@@ -204,8 +206,8 @@ i8042: Probing ports directly.
 serio: i8042 KBD port at 0x60,0x64 irq 1
 serio: i8042 AUX port at 0x60,0x64 irq 12
 mousedev: PS/2 mouse device common for all mice
-IR NEC protocol handler initialized
 input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input0
+IR NEC protocol handler initialized
 IR RC5(x/sz) protocol handler initialized
 IR RC6 protocol handler initialized
 IR JVC protocol handler initialized
@@ -232,7 +234,6 @@ Freeing unused kernel image memory: 2020K
 Freeing unused kernel image memory: 108K
 rodata_test: all tests were successful
 Run /sbin/init as init process
-random: fast init done
 systemd[1]: System time before build time, advancing clock.
 systemd[1]: systemd 237 running in system mode. (+PAM +AUDIT +SELINUX +IMA +APPARMOR +SMACK +SYSVINIT +UTMP +LIBCRYPTSETUP +GCRYPT +GNUTLS +ACL +XZ +LZ4 +SECCOMP +BLKID +ELFUTILS +KMOD -IDN2 +IDN -PCRE2 default-hierarchy=hybrid)
 systemd[1]: Detected architecture x86-64.
@@ -243,121 +244,119 @@ systemd[1]: Set hostname to <gem5-host>.
 systemd[1]: File /lib/systemd/system/systemd-journald.service:36 configures an IP firewall (IPAddressDeny=any), but the local system does not support BPF/cgroup based firewalling.
 systemd[1]: Proceeding WITHOUT firewalling in effect! (This warning is only shown for the first loaded unit using IP firewalling.)
 random: systemd: uninitialized urandom read (16 bytes read)
-systemd[1]: Created slice User and Session Slice.
-[[0;32m  OK  [0m] Created slice User and Session Slice.
+systemd[1]: Reached target Remote File Systems.
+[[0;32m  OK  [0m] Reached target Remote File Systems.
 random: systemd: uninitialized urandom read (16 bytes read)
-systemd[1]: Started Forward Password Requests to Wall Directory Watch.
-[[0;32m  OK  [0m] Started Forward Password Requests to Wall Directory Watch.
-random: systemd: uninitialized urandom read (16 bytes read)
-systemd[1]: Reached target User and Group Name Lookups.
-[[0;32m  OK  [0m] Reached target User and Group Name Lookups.
 systemd[1]: Created slice System Slice.
 [[0;32m  OK  [0m] Created slice System Slice.
-systemd[1]: Listening on udev Kernel Socket.
-[[0;32m  OK  [0m] Listening on udev Kernel Socket.
-[[0;32m  OK  [0m] Listening on fsck to fsckd communication Socket.
-[[0;32m  OK  [0m] Created slice system-serial\x2dgetty.slice.
-[[0;32m  OK  [0m] Listening on udev Control Socket.
-[[0;32m  OK  [0m] Listening on Journal Audit Socket.
+random: systemd: uninitialized urandom read (16 bytes read)
+systemd[1]: Listening on Journal Socket.
 [[0;32m  OK  [0m] Listening on Journal Socket.
+systemd[1]: Listening on Journal Audit Socket.
+[[0;32m  OK  [0m] Lirandom: crng init done
+random: 1 urandom warning(s) missed due to ratelimiting
+stening on Journal Audit Socket.
+systemd[1]: Started Read required files in advance.
+[[0;32m  OK  [0m] Started Read required files in advance.
+[[0;32m  OK  [0m] Listening on fsck to fsckd communication Socket.
+         Starting Remount Root and Kernel File SystemEXT4-fs (hda1): re-mounted. Opts: errors=remount-ro
+s...
+         Starting Load Kernel Modules...
          Mounting Huge Pages File System...
          Mounting POSIX Message Queue File System...
-         Starting udev Coldplug all Devices...
-[[0;32m  OK  [0m] Started Read required files in advance.
-         Starting Set the console keyboard layout...
-[[0;32m  OK  [0m] Reached target Slices.
-[[0;32m  OK  [0m] Listening on Syslog Socket.
-[[0;32m  OK  [0m] Listening on /dev/initctl Compatibility Named Piperandom: crng init done
-random: 7 urandom warning(s) missed due to ratelimiting
-.
-         Starting Uncomplicated firewall...
-         Mounting Kernel Debug File System...
-[[0;32m  OK  [0m] Listening on Journal Socket (/dev/log).
          Starting Create Static Device Nodes in /dev...
-         Starting Load Kernel Modules...
+[[0;32m  OK  [0m] Listening on udev Control Socket.
+[[0;32m  OK  [0m] Reached target User and Group Name Lookups.
+         Mounting Kernel Debug File System...
+[[0;32m  OK  [0m] Listening on udev Kernel Socket.
+         Starting udev Coldplug all Devices...
+[[0;32m  OK  [0m] Started Forward Password Requests to Wall Directory Watch.
+         Starting Set the console keyboard layout...
+[[0;32m  OK  [0m] Created slice system-serial\x2dgetty.slice.
+[[0;32m  OK  [0m] Listening on Syslog Socket.
+         Starting Uncomplicated firewall...
+[[0;32m  OK  [0m] Created slice User and Session Slice.
+[[0;32m  OK  [0m] Reached target Slices.
+[[0;32m  OK  [0m] Listening on /dev/initctl Compatibility Named Pipe.
+[[0;32m  OK  [0m] Listening on Journal Socket (/dev/log).
          Starting Journal Service...
-[[0;32m  OK  [0m] Reached target Remote File Systems.
-         Starting Remount Root and KerEXT4-fs (hda1): re-mounted. Opts: errors=remount-ro
-nel File Systems...
 [[0;32m  OK  [0m] Started Journal Service.
+[[0;32m  OK  [0m] Started Remount Root and Kernel File Systems.
+[[0;32m  OK  [0m] Started Load Kernel Modules.
 [[0;32m  OK  [0m] Mounted Huge Pages File System.
 [[0;32m  OK  [0m] Mounted POSIX Message Queue File System.
+[[0;32m  OK  [0m] Started Create Static Device Nodes in /dev.
+[[0;32m  OK  [0m] Mounted Kernel Debug File System.
 [[0;32m  OK  [0m] Started Set the console keyboard layout.
 [[0;32m  OK  [0m] Started Uncomplicated firewall.
-[[0;32m  OK  [0m] Mounted Kernel Debug File System.
-[[0;32m  OK  [0m] Started Create Static Device Nodes in /dev.
-[[0;32m  OK  [0m] Started Load Kernel Modules.
-[[0;32m  OK  [0m] Started Remount Root and Kernel File Systems.
 [[0;32m  OK  [0m] Started udev Coldplug all Devices.
-         Starting Load/Save Random Seed...
-         Activating swaAdding 567780k swap on /swapfile.  Priority:-2 extents:3 across:584164k 
-p /swapfile...
+         Mounting Kernel Configuration File System...
          Mounting FUSE Control File System...
          Starting Apply Kernel Variables...
-         Mounting Kernel Configuration File System...
          Starting udev Kernel Device Manager...
+         Starting Load/Save Random Seed...
+         Activating swap /swapfile...
 [[0;32m  OK  [0m] Reached target Local File Systems (Pre).
 [[0;32m  OK  [0m] Reached target Local File Systems.
-         Starting Set console font and keymap...
          Starting Tell Plymouth To Write Out Runtime Data...
+         Starting Set console font and keymap...
          Starting Flush Journal to Persistent Storage...
 [[0;32m  OK  [0m] Activated swap /swapfile.
 [[0;32m  OK  [0m] Started udev Kernel Device Manager.
-[[0;32m  OK  [0m] Started Load/Save Random Seed.
+[[0;32m  OK  [0m] Mounted Kernel Configuration File System.
 [[0;32m  OK  [0m] Mounted FUSE Control File System.
 [[0;32m  OK  [0m] Started Apply Kernel Variables.
-[[0;32m  OK  [0m] Mounted Kernel Configuration File System.
-[[0;32m  OK  [0m] Started Set console font and keymap.
+[[0;32m  OK  [0m] Started Load/Save Random Seed.
 [[0;32m  OK  [0m] Started Tell Plymouth To Write Out Runtime Data.
+[[0;32m  OK  [0m] Started Set console font and keymap.
 [[0;32m  OK  [0m] Found device /dev/ttyS0.
+[[0;32m  OK  [0m] Started Flush Journal to Persistent Storage.
+         Starting Create Volatile Files and Directories...
 [[0;32m  OK  [0m] Started Dispatch Password Requests to Console Directory Watch.
 [[0;32m  OK  [0m] Reached target Paths.
 [[0;32m  OK  [0m] Reached target Local Encrypted Volumes.
          Starting Network Service...
 [[0;32m  OK  [0m] Reached target Swap.
 [[0;32m  OK  [0m] Started Network Service.
-[[0;32m  OK  [0m] Started Flush Journal to Persistent Storage.
-         Starting Create Volatile Files and Directories...
 [[0;32m  OK  [0m] Started Create Volatile Files and Directories.
+         Starting Network Time Synchronization...
          Starting Update UTMP about System Boot/Shutdown...
          Starting Network Name Resolution...
-         Starting Network Time Synchronization...
-[[0;32m  OK  [0m] Started Network Name Resolution.
 [[0;32m  OK  [0m] Started Network Time Synchronization.
-[[0;32m  OK  [0m] Reached target System Time Synchronized.
+[[0;32m  OK  [0m] Started Network Name Resolution.
 [[0;32m  OK  [0m] Reached target Network.
 [[0;32m  OK  [0m] Reached target Host and Network Name Lookups.
+[[0;32m  OK  [0m] Reached target System Time Synchronized.
 [[0;32m  OK  [0m] Started Update UTMP about System Boot/Shutdown.
 [[0;32m  OK  [0m] Reached target System Initialization.
 [[0;32m  OK  [0m] Started Daily apt download activities.
-[[0;32m  OK  [0m] Listening on UUID daemon activation socket.
-[[0;32m  OK  [0m] Started Daily apt upgrade and clean activities.
-[[0;32m  OK  [0m] Started Daily Cleanup of Temporary Directories.
 [[0;32m  OK  [0m] Listening on D-Bus System Message Bus Socket.
-[[0;32m  OK  [0m] Reached target Sockets.
-[[0;32m  OK  [0m] Reached target Basic System.
-         Starting LSB: Record successful boot for GRUB...
-[[0;32m  OK  [0m] Started irqbalance daemon.
-         Starting Permit User Sessions...
-         Starting Login Service...
-[[0;32m  OK  [0m] Started Set the CPU Frequency Scaling governor.
-         Starting Dispatcher daemon for systemd-networkd...
-         Starting System Logging Service...
-         Starting OpenBSD Secure Shell server...
-         Starting Accounts Service...
-[[0;32m  OK  [0m] Started D-Bus System Message Bus.
-hda: DMA interrupt recovery
-[[0;32m  OK  [0m] Started Login Service.
-[[0;32m  OK  [0m] Started Regular background program processing daemon.
 [[0;32m  OK  [0m] Started Discard unused blocks once a week.
 [[0;32m  OK  [0m] Started Message of the Day.
+[[0;32m  OK  [0m] Started Daily apt upgrade and clean activities.
+[[0;32m  OK  [0m] Started Daily Cleanup of Temporary Directories.
 [[0;32m  OK  [0m] Reached target Timers.
+[[0;32m  OK  [0m] Listening on UUID daemon activation socket.
+[[0;32m  OK  [0m] Reached target Sockets.
+[[0;32m  OK  [0m] Reached target Basic System.
+         Starting Login Service...
+         Starting Dispatcher daemon for systemd-networkd...
+[[0;32m  OK  [0m] Started Regular background program processing daemon.
+[[0;32m  OK  [0m] Started irqbalance daemon.
+         Starting OpenBSD Secure Shell server...
+[[0;32m  OK  [0m] Started D-Bus System Message Bus.
+         Starting Accounts Service...
+         Starting LSB: Record successful boot for GRUB...
+         Starting System Logging Service...
+[[0;32m  OK  [0m] Started Set the CPU Frequency Scaling governor.
+         Starting Permit User Sessions...
 [[0;32m  OK  [0m] Started System Logging Service.
-[[0;32m  OK  [0m] Started Dispatcher daemon for systemd-networkd.
 [[0;32m  OK  [0m] Started Permit User Sessions.
-[[0;32m  OK  [0m] Started Accounts Service.
+[[0;32m  OK  [0m] Started Dispatcher daemon for systemd-networkd.
+[[0;32m  OK  [0m] Started Login Service.
 [[0;32m  OK  [0m] Started OpenBSD Secure Shell server.
 [[0;32m  OK  [0m] Started LSB: Record successful boot for GRUB.
+[[0;32m  OK  [0m] Started Accounts Service.
          Starting Hold until boot process finishes up...
          Starting Terminate Plymouth Boot Screen...
 [[0;32m  OK  [0m] Started Hold until boot process finishes up.
@@ -365,6 +364,14 @@ hda: DMA interrupt recovery
          Starting Set console scheme...
 [[0;32m  OK  [0m] Started Serial Getty on ttyS0.
 [[0;32m  OK  [0m] Started Set console scheme.
+[[0;32m  OK  [0m] Created slice system-getty.slice.
+[[0;32m  OK  [0m] Started Getty on tty1.
+[[0;32m  OK  [0m] Reached target Login Prompts.
+[[0;32m  OK  [0m] Reached target Multi-User System.
+[[0;32m  OK  [0m] Reached target Graphical Interface.
+[[0;32m  OK  [0m] Started Stop ureadahead data collection 45s after completed startup.
+         Starting Update UTMP about System Runlevel Changes...
+[[0;32m  OK  [0m] Started Update UTMP about System Runlevel Changes.
 
 Ubuntu 18.04.2 LTS gem5-host ttyS0
 

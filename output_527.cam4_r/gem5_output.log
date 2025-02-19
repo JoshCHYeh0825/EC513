@@ -5,25 +5,24 @@ gem5 is copyrighted software; use the --copyright option for details.
 
 gem5 version 24.1.0.1
 gem5 compiled Feb  8 2025 10:02:26
-gem5 started Feb 17 2025 16:56:50
-gem5 executing on scc-wn1, pid 110526
-command line: /projectnb/ec513/students/jy0825/HW2/spec-2017/gem5/build/X86/gem5.opt --outdir=/projectnb/ec513/students/jy0825/HW2/spec-2017/gem5/output_527.cam4_r /projectnb/ec513/students/jy0825/HW2/spec-2017/gem5/configs/example/gem5_library/x86-spec-cpu2017-benchmarks.py --image /projectnb/ec513/students/jy0825/HW2/spec-2017/disk-image/spec-2017/spec-2017-image/spec-2017 --partition 1 --benchmark 527.cam4_r --size test
+gem5 started Feb 18 2025 15:11:57
+gem5 executing on scc-ne6, pid 135577
+command line: /projectnb/ec513/students/jy0825/HW2/spec-2017/gem5/build/X86/gem5.opt --outdir=/projectnb/ec513/students/jy0825/HW2/Tests/output_527.cam4_r /projectnb/ec513/students/jy0825/HW2/spec-2017/gem5/configs/example/gem5_library/x86-spec-cpu2017-benchmarks.py --image /projectnb/ec513/students/jy0825/HW2/spec-2017/disk-image/spec-2017/spec-2017-image/spec-2017 --partition 1 --benchmark 527.cam4_r --size test
 
 info: Standard input is not a terminal, disabling listeners.
 info: Using default config
 CPUS:
-[<gem5.components.processors.simple_core.SimpleCore object at 0x14b0e9170b90>, <gem5.components.processors.simple_core.SimpleCore object at 0x14b0ea2a6300>]
+[<gem5.components.processors.simple_core.SimpleCore object at 0x14fd29809af0>, <gem5.components.processors.simple_core.SimpleCore object at 0x14fd26b44890>]
 Running the simulation
 Using KVM cpu
 Done bootling Linux
 Resetting stats at the start of ROI!
 switching cpus
-Setting-up warmup
 Setting-up measurements
 Dumping true stats
 Done with the simulation
 
 Performance statistics:
-roi simulated ticks: 580889430432
-Ran a total of 69.135904293598 simulated seconds
-Total wallclock time: 13745.12s, 229.09 min
+roi simulated ticks: 33836474655
+Ran a total of 20.066950812151 simulated seconds
+Total wallclock time: 16318.16s, 271.97 min
